@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Markdown Slideshow Demo</title>
+
+    <link href="../node_modules/prismjs/themes/prism.css" rel="stylesheet"> </link>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"> </script>
+    <script src="../node_modules/showdown/dist/showdown.min.js"> </script>
+    <script src="../node_modules/prismjs/prism.js"> </script>
+    <script src="../src/markdown-presentation.js"> </script>
+
+    <style>
+      body {
+        body {
+          background: #f7f7f7;
+          font-family: Arial, helvetica, sans-serif;
+        }
+
+        section {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="presentation-parent"> </div>
+
+    <script>
+      var pres = new MarkdownPresentation({
+        presentationElement: '.presentation-parent',
+        data: `
+# Test
+## First Slide
+### First Subhead
+This is a description that no one will see
+
+## Second Slide
+### Second Subhead
+### Second Subhead 2
+
+        `
+      });
+
+      pres.start();
+    </script>
+  </body>
+</html>
