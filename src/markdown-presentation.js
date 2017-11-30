@@ -1,12 +1,12 @@
-(function(window, $, showdown, Prism) {
-  var MDP = window.MarkdownPresentation = function(config) {
+(function(window, exports, $, showdown, Prism) {
+  var MDP = function(config) {
     if (!config.presentationElement) {
       throw 'Must configure a presentationElement selector';
     }
 
     this.presentationElement = $(config.presentationElement);
     this.data = config.data;
-    this.sectionPreprocessLookup = {} || config.sectionPreprocess;
+    this.sectionPreprocessLookup = config.sectionPreprocess || {};
     this.sections = [];
     this.current = 0;
   };
@@ -104,11 +104,17 @@
         }
 
         if (that.tagLookup[element.tagName]) {
-          result = currentSection = that.tagLookup[element.tagName](element, that.sections);
+          result = that.tagLookup[element.tagName](element, that.sections);
         }
 
         if (result === false) {
           return;
+        }
+
+        if (result !== undefined) {
+          currentSection = result;
+        } else {
+          result = element;
         }
 
         currentSection.append(element);
@@ -131,4 +137,12 @@
       });
     }
   };
-})(window, $, showdown, Prism);
+
+  if (window) {
+    window.MarkdownPresentation = MDP;
+  }
+
+  if (typeof exports === 'object') {
+    exports.MDP = MDP;
+  }
+})(window, exports, $, showdown, Prism);
