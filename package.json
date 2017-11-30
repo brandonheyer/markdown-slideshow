@@ -1,23 +1,20 @@
 {
   "name": "markdown-slideshow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert a markdown document into an HTML and JS based slideshow. Each top level header represents a new slide.",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
+  "main": "src/markdown-presentation.js",
+  "dependencies": {
     "jquery": "^3.2.1",
     "prism": "^4.1.2",
     "prismjs": "^1.8.4",
     "showdown": "^1.8.1"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonheyer/markdown-slideshow.git"
   },
-  "author": "",
+  "author": "Brandon Heyer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brandonheyer/markdown-slideshow/issues"
