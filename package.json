@@ -1,6 +1,6 @@
 {
   "name": "markdown-slideshow",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Convert a markdown document into an HTML and JS based slideshow. Each top level header represents a new slide.",
   "main": "src/markdown-presentation.js",
   "dependencies": {
