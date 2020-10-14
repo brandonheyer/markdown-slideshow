@@ -74,14 +74,14 @@
 
     if (Prism) {
       this.sections[this.current]
-        .find('code')
-        .html(
-          Prism.highlight(
-            this.sections[this.current].find('code')
-              .text(),
-            Prism.languages.javascript
-          )
-        );
+        .find('code').each((i, el) =>
+        	$(el).html(
+          	Prism.highlight(
+            	$(el).text(),
+            	Prism.languages.javascript
+          	)
+        	)
+				);
     }
 
     if (this.notesBody) {
