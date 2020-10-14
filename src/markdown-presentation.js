@@ -25,7 +25,6 @@
 
       this.notes[this.sections.length - 1] = this.notes[this.sections.length - 1] || $("<div />");
       this.notes[this.sections.length - 1] = this.notes[this.sections.length - 1].append($element.clone());
-      // this.notes[this.sections.length - 1] = $element.clone();
 
       return false;
     },
@@ -129,7 +128,7 @@
       }
     }
 
-    if (this.current !== this.oldCurrent) {
+    if (this.current !== oldCurrent) {
       if (this.cleanup) {
         this.cleanup();
       }
