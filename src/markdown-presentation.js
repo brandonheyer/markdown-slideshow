@@ -200,6 +200,7 @@
         }
 
         currentSection.tags.push(element.tagName);
+				currentSection.attr("data-tags", currentSection.tags.join("-"));
         currentSection.append(element);
       });
 
