@@ -5,8 +5,7 @@
   "main": "src/markdown-presentation.js",
   "dependencies": {
     "jquery": "^3.2.1",
-    "prism": "^4.1.2",
-    "prismjs": "^1.8.4",
+    "prismjs": "^1.22.0",
     "showdown": "^1.8.1"
   },
   "devDependencies": {},
